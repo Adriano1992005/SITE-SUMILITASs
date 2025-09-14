@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SUMILITAS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0b0b0b;
+      --bg2:#241212;
+      --blood:#8b0000;
+      --blood-dark:#4a0000;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{
+      font-family: 'Nosifer', cursive;
+      background: radial-gradient(ellipse at center, rgba(36,18,18,0.65) 0%, rgba(5,5,5,0.95) 70%), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><filter id="g"><feTurbulence baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23g)" opacity="0.05" fill="black"/></svg>') center/cover no-repeat;
+      display:flex;align-items:center;justify-content:center;color:var(--blood);
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    }
+    .stage{
+      width:100%;max-width:1100px;padding:32px;text-align:center;
+    }
+    h1{
+      margin:0;font-size:clamp(36px, 8vw, 120px);line-height:0.9;
+      color:var(--blood);
+      text-shadow:
+        0 6px 0 rgba(0,0,0,0.6),
+        0 10px 30px rgba(0,0,0,0.6),
+        0 0 2px rgba(139,0,0,0.8);
+      transform:translateY(0);
+      position:relative;
+      padding:0 12px;
+    }
+    /* dripping effect */
+    h1::after{
+      content:'';position:absolute;left:10%;right:10%;bottom:-18px;height:60px;
+      background:radial-gradient(ellipse at top, rgba(139,0,0,0.9) 0%, rgba(74,0,0,0.9) 60%, transparent 61%);
+      filter:blur(8px);opacity:0.9;pointer-events:none;
+      animation:drip 3.6s linear infinite;
+      mix-blend-mode:screen;
+    }
+    @keyframes drip{
+      0%{transform:translateY(0) scaleX(1)}
+      40%{transform:translateY(4px) scaleX(0.98)}
+      80%{transform:translateY(12px) scaleX(0.95)}
+      100%{transform:translateY(0) scaleX(1)}
+    }
+    .sub{
+      margin-top:18px;font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      font-size:16px;color:#c9a6a6;opacity:0.9;
+    }
+    .panel{
+      margin-top:28px;background:rgba(0,0,0,0.35);padding:18px;border-radius:8px;border:1px solid rgba(139,0,0,0.08);
+      color:#e8d6d6;max-width:760px;margin-left:auto;margin-right:auto;
+    }
+    .sigil{
+      margin-top:18px;display:inline-block;width:160px;height:160px;background:transparent;
+      mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" stroke="black" stroke-width="6" fill="none" /><path d="M50 24 L58 44 L50 64 L42 44 Z" fill="black" /></svg>') center/contain no-repeat;
+      -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" stroke="black" stroke-width="6" fill="none" /><path d="M50 24 L58 44 L50 64 L42 44 Z" fill="black" /></svg>') center/contain no-repeat;
+      background:linear-gradient(180deg, rgba(139,0,0,0.9), rgba(74,0,0,0.9));
+      box-shadow:0 10px 30px rgba(0,0,0,0.6) inset;
+    }
+    @media (max-width:520px){
+      .panel{padding:12px}
+      h1::after{display:none}
+    }
+    footer{position:fixed;left:12px;bottom:12px;color:#8b6e6e;font-size:12px;opacity:0.9}
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <h1>O SANGUE E O COMBUSTIVEL</h1>
+    <div class="sub">Sumilitas &middot; Arquivos</div>
+    <div class="panel">
+      <div>Se chegou até aqui, já ouviu o chamado. A verdade exige preço.</div>
+      <div style="margin-top:12px;font-size:13px;opacity:0.9">(Este é um site fictício criado para fins de jogo. Preserve a imersão.)</div>
+      <div class="sigil" aria-hidden="true"></div>
+    </div>
+  </div>
+  <footer>sumilitas-occultum.com</footer>
+
+  <script>
+    setTimeout(() => {
+      alert("VOCÊ JÁ FOI MARCADO. O SANGUE LHE COBRARÁ.");
+    }, 3000);
+  </script>
+</body>
+</html>
